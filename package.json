@@ -1,11 +1,17 @@
 {
-  "name": "application-name",
+  "name": "CrispyMind",
   "version": "0.0.1",
   "private": true,
+  "scripts": {
+    "start": "node app"
+  },
+  "engines": {
+    "node": "0.6.12",
+    "npm": "1.1.4"
+  },
   "dependencies": {
     "express": "2.5.11",
-    "stylus": ">= 0.0.1",
-    "jade": ">= 0.0.1",
-    "zlib": "~1.0.5"
+    "stylus": "*",
+    "jade": "*"
   }
 }
