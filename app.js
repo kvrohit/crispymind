@@ -4,40 +4,33 @@
  */
 
 var express = require('express')
-  , routes = require('./routes');
+  , routes = require('./routes')
+  , user = require('./routes/user')
+  , http = require('http')
+  , path = require('path');
 
-var app = module.exports = express.createServer();
-
-// Configuration
+var app = express();
 
 app.configure(function(){
+  app.set('port', process.env.PORT || 3000);
   app.set('views', __dirname + '/views');
   app.set('view engine', 'jade');
+  app.use(express.favicon());
+  app.use(express.logger('dev'));
   app.use(express.bodyParser());
   app.use(express.methodOverride());
-  app.use(require('stylus').middleware({ src: __dirname + '/public' }));
   app.use(app.router);
-  app.use(express.static(__dirname + '/public'));
+  app.use(require('stylus').middleware(__dirname + '/public'));
+  app.use(express.static(path.join(__dirname, 'public')));
 });
 
 app.configure('development', function(){
-  app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
-});
-
-app.configure('production', function(){
   app.use(express.errorHandler());
 });
 
-// Routes
-
 app.get('/', routes.index);
-app.get('/services', routes.services);
-app.get('/profiles', routes.profiles);
-app.get('/contact', routes.contact);
+app.get('/users', user.list);
 
-// Port settings, required by heroku
-var port = process.env.PORT || 3000;
-
-app.listen(port, function(){
-  console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);
+http.createServer(app).listen(app.get('port'), function(){
+  console.log("Express server listening on port " + app.get('port'));
 });

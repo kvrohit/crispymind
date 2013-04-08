@@ -1,0 +1,102 @@
+body {
+  padding-top: 42px;
+  font: 1em/1.5em 'Delius', 'Open Sans', 'Segoe UI', sans-serif;
+  background-image: url("../img/background_white.jpg");
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'PT Sans', sans-serif;
+  text-shadow: 1px 1px 0 #fff;
+  color: #033649;
+  line-height: 1.1em;
+  font-weight: 400;
+}
+p {
+  margin-bottom: 20px;
+  text-align: justify;
+}
+li {
+  line-height: 1.5em;
+}
+.navbar .brand {
+  padding: 5px 20px;
+}
+.navbar .brand img {
+  width: 32px;
+  height: 32px;
+  border-radius: 32px;
+  border: 1px solid #777;
+}
+.navbar .brand span {
+  vertical-align: middle;
+  margin-left: 5px;
+  font-size: 24px;
+  line-height: 1.3em;
+}
+section {
+  padding: 60px 0;
+}
+section:nth-child(2n+1) {
+  background: url("../img/concrete_wall.png");
+  color: #ccc;
+}
+section:nth-child(2n+1) h1,
+section:nth-child(2n+1) h2,
+section:nth-child(2n+1) h3,
+section:nth-child(2n+1) h4,
+section:nth-child(2n+1) h5,
+section:nth-child(2n+1) h6 {
+  text-shadow: 1px 1px 0 #000;
+  color: #aaa;
+}
+section#contact {
+  padding: 0 0;
+}
+div.hero-unit {
+  background: none;
+  border-radius: 0;
+}
+div.hero-unit img {
+  margin-right: 30px;
+}
+div.hero-unit p {
+  text-align: justify;
+}
+img.profile {
+  box-shadow: 0 0 5px #ccc;
+  width: 180px;
+  height: 180px;
+  border-radius: 100px;
+}
+.well.well-large {
+  min-height: 430px;
+  color: #333;
+}
+.well.well-large h3 {
+  text-shadow: 1px 1px 0 #fff;
+  color: #033649;
+}
+.hidden {
+  display: none;
+}
+@media (max-width: 979px) {
+  body {
+    padding-top: 0;
+  }
+  .navbar-fixed-top {
+    margin-bottom: 0;
+  }
+}
+@media (max-width: 767px) {
+  section {
+    margin: 0 -20px;
+    padding: 60px 30px;
+  }
+  section#contact .container {
+    padding: 0 30px;
+  }
+}
