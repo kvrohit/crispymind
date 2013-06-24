@@ -2,8 +2,7 @@ doctype 5
 html
   head
     title Crispymind - Raising Standards
-    link(href='http://fonts.googleapis.com/css?family=Roboto:100,300', rel='stylesheet', type='text/css')
-    link(href='http://fonts.googleapis.com/css?family=Open+Sans:300', rel='stylesheet', type='text/css')
+    link(href='http://fonts.googleapis.com/css?family=Open+Sans:300|Raleway:200', rel='stylesheet', type='text/css')
     link(rel='stylesheet', href='/css/bootstrap.min.css')
     link(rel='stylesheet', href='/css/bootstrap-responsive.min.css')
     link(rel='stylesheet', href='/css/flat-ui.css')
@@ -12,17 +11,24 @@ html
     block content
     script(src='/js/jquery.min.js')
     //- script(src='/js/jquery.smooth-scroll.min.js')
-    script(src='/js/bootstrap.min.js')
+    //- script(src='/js/bootstrap.min.js')
     //if lt IE 8
       script(src='http://html5shim.googlecode.com/svn/trunk/html5.js')
     script
       $(document).ready(function() {
-        $('.navbar').scrollspy();
-        $('.full').addClass('hidden');
-        $('.btn').on('click', function() {
-          $('.full').toggleClass('hidden');
-          $(this).remove();
+        //- $('.navbar').scrollspy();
+        //- $('.full').addClass('hidden');
+        //- $('.btn').on('click', function() {
+        //-   $('.full').toggleClass('hidden');
+        //-   $(this).remove();
+        //- });
+
+        $('.navbar a').on('click', function() {
+          var jumpId = $(this).attr('href');
+          console.log($(jumpId).offset().top);
+          $('body').animate({ scrollTop: $(jumpId).offset().top }, 'slow');
         });
+
         //- $('.navbar a').smoothScroll({easing: 'swing'});
       });
 

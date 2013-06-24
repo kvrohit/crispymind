@@ -1,6 +1,6 @@
 body {
-  padding-top: 80px;
-  font: 0.9em/1.5em 'Open Sans', 'Segoe UI', sans-serif;
+  margin-top: 90px;
+  font: 1em/1.5em 'Open Sans', 'Segoe UI', sans-serif;
   background-color: #f8f8f8;
 }
 h1,
@@ -9,13 +9,13 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Raleway', sans-serif;
   color: #033649;
   line-height: 1.1em;
-  font-weight: 100;
+  font-weight: 200;
 }
 h1 {
-  font-size: 2.8em;
+  font-size: 2.6em;
 }
 p {
   margin-bottom: 20px;
@@ -28,15 +28,16 @@ a {
   text-decoration: none;
 }
 .navbar {
-  font-family: 'Open Sans';
+  font-family: 'Raleway', sans-serif;
 }
 .navbar .nav li > a {
-  font-weight: 300;
+  font-weight: 200;
 }
 .navbar .brand {
-  font-weight: 300;
+  font-weight: 200;
   padding: 5px 0;
   color: #ddd;
+  text-transform: uppercase;
 }
 .navbar .brand img {
   width: 48px;
@@ -76,7 +77,7 @@ section {
 }
 section:nth-child(2n+1) {
   color: #fff;
-  background-color: #2c3e50;
+  background-color: #27ae60;
 }
 section:nth-child(2n+1) h1,
 section:nth-child(2n+1) h2,
@@ -84,10 +85,19 @@ section:nth-child(2n+1) h3,
 section:nth-child(2n+1) h4,
 section:nth-child(2n+1) h5,
 section:nth-child(2n+1) h6 {
-  color: #16a085;
+  color: #2c3e50;
 }
 section#contact {
   padding: 0 0;
+}
+section#quote {
+  padding: 255px 0;
+  background-color: #f39c12;
+}
+section#quote div {
+  text-align: center;
+  font-size: 2em;
+  font-family: 'Raleway', sans-serif;
 }
 img.profile {
   box-shadow: 0 0 5px #ccc;

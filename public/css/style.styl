@@ -1,11 +1,11 @@
-$fontSize         = 0.9em
+$fontSize         = 1em
 $lineHeight       = 1.5em
 $bodyFontFamily   = 'Open Sans', 'Segoe UI', sans-serif
-$headerFontFamily = 'Roboto', sans-serif
+$headerFontFamily = 'Raleway', sans-serif
 $backgroundColor  = #f8f8f8
 
 body
-  padding-top 80px
+  margin-top 90px
   font $fontSize/$lineHeight $bodyFontFamily
   background-color $backgroundColor
 
@@ -13,10 +13,10 @@ h1, h2, h3, h4, h5, h6
   font-family $headerFontFamily
   color #033649
   line-height 1.1em
-  font-weight 100
+  font-weight 200
 
 h1
-  font-size 2.8em
+  font-size 2.6em
 
 p
   margin-bottom 20px
@@ -29,15 +29,16 @@ a
   text-decoration none
 
 .navbar
-  font-family 'Open Sans'
+  font-family $headerFontFamily
 
   .nav li > a
-    font-weight 300
+    font-weight 200
 
   .brand
-    font-weight 300
+    font-weight 200
     padding 5px 0
     color #dddddd
+    text-transform uppercase
 
     img
       width 48px
@@ -77,12 +78,21 @@ section
 
   &:nth-child(2n+1)
     color #fff
-    background-color #2C3E50
+    background-color #27ae60
     h1, h2, h3, h4, h5, h6
-      color #16A085
+      color #2c3e50
 
   &#contact
     padding 0 0
+
+  &#quote
+    padding 255px 0
+    background-color #F39C12
+
+    div
+      text-align center
+      font-size 2em
+      font-family $headerFontFamily
 
 img.profile
   box-shadow 0 0 5px #ccc
