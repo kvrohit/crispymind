@@ -4,31 +4,36 @@ html
     title Crispymind - Raising Standards
     link(href='http://fonts.googleapis.com/css?family=Open+Sans:300|Raleway:200', rel='stylesheet', type='text/css')
     link(rel='stylesheet', href='/css/bootstrap.min.css')
-    link(rel='stylesheet', href='/css/bootstrap-responsive.min.css')
-    link(rel='stylesheet', href='/css/flat-ui.css')
+    //- link(rel='stylesheet', href='/css/bootstrap-responsive.min.css')
+    //- link(rel='stylesheet', href='/css/flat-ui.css')
     link(rel='stylesheet', href='/css/style.css')
-  body(data-spy='scroll', data-target='.navbar')#home
+  body(data-spy='scroll', data-target='.navbar', data-offset='100')#home
     block content
     script(src='/js/jquery.min.js')
-    //- script(src='/js/jquery.smooth-scroll.min.js')
-    //- script(src='/js/bootstrap.min.js')
+    script(src='/js/jquery.easing.min.js')
+    script(src='/js/bootstrap.min.js')
     //if lt IE 8
       script(src='http://html5shim.googlecode.com/svn/trunk/html5.js')
     script
       $(document).ready(function() {
-        //- $('.navbar').scrollspy();
-        //- $('.full').addClass('hidden');
-        //- $('.btn').on('click', function() {
-        //-   $('.full').toggleClass('hidden');
-        //-   $(this).remove();
-        //- });
+        $('.navbar').scrollspy();
+        $('.full').addClass('hidden');
+        $('#full-profiles').on('click', function(e) {
+          e.preventDefault();
+          $('.full').toggleClass('hidden');
+          $(this).remove();
+        });
 
         $('.navbar a').on('click', function() {
           var jumpId = $(this).attr('href');
-          console.log($(jumpId).offset().top);
-          $('body').animate({ scrollTop: $(jumpId).offset().top }, 'slow');
+          $('html, body').animate({ scrollTop: $(jumpId).offset().top - 103 }, 750, 'easeOutCirc');
         });
 
-        //- $('.navbar a').smoothScroll({easing: 'swing'});
-      });
+        //- var winHeight = $(window).height();
+        //- $('#quote').css('min-height', winHeight);
 
+        //- $(window).resize(function() {
+        //-   var winHeight = $(window).height();
+        //-   $('#quote').css('min-height', winHeight);
+        //- });
+      });
