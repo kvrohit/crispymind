@@ -4,8 +4,6 @@ html
     title Crispymind - Raising Standards
     link(href='http://fonts.googleapis.com/css?family=Open+Sans:300|Raleway:200', rel='stylesheet', type='text/css')
     link(rel='stylesheet', href='/css/bootstrap.min.css')
-    //- link(rel='stylesheet', href='/css/bootstrap-responsive.min.css')
-    //- link(rel='stylesheet', href='/css/flat-ui.css')
     link(rel='stylesheet', href='/css/style.css')
   body(data-spy='scroll', data-target='.navbar', data-offset='100')#home
     block content
@@ -24,16 +22,8 @@ html
           $(this).remove();
         });
 
-        $('.navbar a').on('click', function() {
+        $('.nav-collapse a').on('click', function() {
           var jumpId = $(this).attr('href');
           $('html, body').animate({ scrollTop: $(jumpId).offset().top - 103 }, 750, 'easeOutCirc');
         });
-
-        //- var winHeight = $(window).height();
-        //- $('#quote').css('min-height', winHeight);
-
-        //- $(window).resize(function() {
-        //-   var winHeight = $(window).height();
-        //-   $('#quote').css('min-height', winHeight);
-        //- });
       });
